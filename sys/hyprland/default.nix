@@ -3,7 +3,6 @@
   imports = [
     ./hyprland-core.nix
     ./session-variables.nix
-    ./theme-cursor.nix
     ./packages-hyprland.nix
     ./settings-source.nix
     ./settings-general.nix
