@@ -55,8 +55,8 @@ in
     };
 
     iconTheme = {
-      package = pkgs.candy-icons;
-      name = "candy-icons";
+      package = pkgs.papirus-icon-theme;
+      name = "papirus-icon-theme";
     };
 
     font = {
