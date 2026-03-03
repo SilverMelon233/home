@@ -12,14 +12,6 @@
     ./keybinds.nix
     ./exec-once.nix
     ./plugins
-    ./hyprpaper.nix
-    ./hypridle.nix
-    ./hyprlock.nix
-    # ./ashell
-    # ./ironbar
-    # ./matshell
-    ./hyprpanel
-    ./walker.nix
     ./xremap.nix
   ];
 }
