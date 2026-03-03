@@ -4,7 +4,8 @@
 }:
 {
   home.packages = [
-    pkgs.dms
+    pkgs.quickshell
+    pkgs.dms-shell
   ];
 
   # programs.dms-shell = {
