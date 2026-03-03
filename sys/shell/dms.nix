@@ -7,8 +7,8 @@
     pkgs.dms
   ];
 
-  programs.dms-shell = {
-    enable = true;
-    quickshell.package = pkgs.quickshell;
-  };
+  # programs.dms-shell = {
+  #   enable = true;
+  #   quickshell.package = pkgs.quickshell;
+  # };
 }
