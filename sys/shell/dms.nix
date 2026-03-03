@@ -3,13 +3,13 @@
   ...
 }:
 {
-  home.packages = [
-    pkgs.quickshell
-    pkgs.dms-shell
+  home.packages = with pkgs; [
+    quickshell
+    dms-shell
+    dgop
   ];
 
   wayland.windowManager.hyprland.settings.exec-once = [
-    "fcitx5"
     "dms run"
   ];
   # programs.dms-shell = {
