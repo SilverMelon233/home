@@ -9,9 +9,9 @@
       "$mod, B, exec, brave"
       "$mod, Return, exec, ghostty"
       "$mod, Q, hy3:killactive"
-      "$mod, Space, exec, walker"
+      "$mod, Space, exec, dms ipc call spotlight toggle"
       "$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-      "$mod, L, exec, hyprlock"
+      "$mod, L, exec, dms lock lock"
       "$mod, F, fullscreen, 1"
 
       "$mod, T, hy3:changegroup, toggletab"
@@ -28,6 +28,8 @@
       "$mod SHIFT, S, hy3:movewindow, d"
       "$mod SHIFT, W, hy3:movewindow, u"
       "$mod SHIFT, D, hy3:movewindow, r"
+
+      "$mod CTRL, S, exec, dms screenshot"
 
       "$mod, comma, hy3:focustab, l, wrap"
       "$mod, period, hy3:focustab, r, wrap"
