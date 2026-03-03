@@ -7,7 +7,5 @@
     librsvg
     nwg-look
     nwg-displays
-    grimblast
-    waypaper
   ];
 }
