@@ -6,8 +6,8 @@
   wayland.windowManager.hyprland.settings = {
     source = [
       "~/.config/hypr/dms/layout.conf"
-      "~/.config/hypr/dms/output.conf"
-      "~/.config/hypr/dms/windowruls.conf"
+      "~/.config/hypr/dms/outputs.conf"
+      "~/.config/hypr/dms/windowrules.conf"
     ];
 
     general = {
