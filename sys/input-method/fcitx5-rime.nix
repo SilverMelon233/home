@@ -6,4 +6,8 @@
       schema_list:
         - schema: rime_ice
   '';
+
+  wayland.windowManager.hyprland.settings.exec-once = [
+    "fcitx5"
+  ];
 }
