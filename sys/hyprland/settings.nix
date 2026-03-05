@@ -8,6 +8,7 @@
       "~/.config/hypr/dms/layout.conf"
       "~/.config/hypr/dms/outputs.conf"
       "~/.config/hypr/dms/windowrules.conf"
+      "~/.config/hypr/dms/cursor.conf"
     ];
 
     general = {
@@ -36,7 +37,7 @@
       "$mod, Q, hy3:killactive"
       "$mod, Space, exec, dms ipc call spotlight toggle"
       "$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-      "$mod, L, exec, dms lock lock"
+      "$mod, L, exec, dms ipc lock lock"
       "$mod, F, fullscreen, 1"
 
       "$mod, T, hy3:changegroup, toggletab"

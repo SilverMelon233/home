@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    papirus-icon-them
+    papirus-icon-theme
     adwaita-icon-theme
-    catppuccin-cursors
+    catppuccin-cursors.mochaMauve
+    bibata-cursors
     librsvg
   ];
 }

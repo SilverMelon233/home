@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./borders-plus-plus.nix
+    # ./borders-plus-plus.nix
     ./hyprbars.nix
     ./hy3.nix
     ./hyprexpo.nix

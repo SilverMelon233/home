@@ -20,5 +20,8 @@
   #   ];
   # };
 
-  home.packages = [ pkgs.xremap ];
+  home.packages = [
+    pkgs.xremap
+    pkgs.kitty
+  ];
 }
