@@ -2,7 +2,7 @@
 {
   imports = [
     ./helix
-    ./jetbrains
+    # ./jetbrains
     ./vscode
     ./zed
   ];
