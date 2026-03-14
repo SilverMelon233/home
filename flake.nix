@@ -35,6 +35,7 @@
       };
       userConfig = import ./user-config.nix {
         inherit pkgs;
+        inherit pkgs-unstable;
       };
     in
     {
