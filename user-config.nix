@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   ...
 }:
 let
@@ -18,7 +19,7 @@ in
     "opencode"
   ];
 
-  vscode-extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
+  vscode-extensions = with pkgs-unstable.nix-vscode-extensions.vscode-marketplace; [
     github.copilot-chat
     johnny-zhao.oai-compatible-copilot
     ms-ceintl.vscode-language-pack-zh-hans
