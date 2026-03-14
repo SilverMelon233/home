@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    vlc
+  home.packages = [
+    pkgs-unstable.vlc
   ];
 }

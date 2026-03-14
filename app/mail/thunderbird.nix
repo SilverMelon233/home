@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    thunderbird
+  home.packages = [
+    pkgs-unstable.thunderbird
   ];
 }

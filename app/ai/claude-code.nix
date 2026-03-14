@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.claude-code ];
+  home.packages = [ pkgs-unstable.claude-code ];
 }

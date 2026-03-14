@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.cherry-studio ];
+  home.packages = [ pkgs-unstable.cherry-studio ];
 }

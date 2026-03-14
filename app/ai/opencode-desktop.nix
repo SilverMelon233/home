@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    opencode-desktop
+  home.packages = [
+    pkgs-unstable.opencode
+    pkgs-unstable.opencode-desktop
   ];
 }

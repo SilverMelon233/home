@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    element-desktop
+  home.packages = [
+    pkgs-unstable.element-desktop
   ];
 }

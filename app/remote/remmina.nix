@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    remmina
+  home.packages = [
+    pkgs-unstable.remmina
   ];
 }

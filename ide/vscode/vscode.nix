@@ -1,5 +1,5 @@
 {
-  pkgs,
+  pkgs-unstable,
   userConfig,
   ...
 }:
@@ -24,9 +24,9 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs-unstable.vscode;
     profiles.default.extensions =
-      with pkgs.nix-vscode-extensions.vscode-marketplace;
+      with pkgs-unstable.nix-vscode-extensions.vscode-marketplace;
       [
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons

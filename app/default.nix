@@ -7,9 +7,7 @@
     ./mail
     ./media
     ./office
-    ./transfer
     ./recording
     ./remote
-    ./system
   ];
 }

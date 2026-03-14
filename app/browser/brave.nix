@@ -1,5 +1,5 @@
 {
-  pkgs,
+  pkgs-unstable,
   userConfig,
   ...
 }:
@@ -21,7 +21,7 @@ in
 {
   programs.brave = {
     enable = true;
-    package = pkgs.brave;
+    package = pkgs-unstable.brave;
     extensions = [
       { id = catppuccinThemeIds.${style}; }
     ];
