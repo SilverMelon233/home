@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.datagrip ];
+  home.packages = [ pkgs-unstable.jetbrains.datagrip ];
 }

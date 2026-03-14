@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.webstorm ];
+  home.packages = [ pkgs-unstable.jetbrains.webstorm ];
 }

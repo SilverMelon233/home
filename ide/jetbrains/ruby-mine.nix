@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.ruby-mine ];
+  home.packages = [ pkgs-unstable.jetbrains.ruby-mine ];
 }

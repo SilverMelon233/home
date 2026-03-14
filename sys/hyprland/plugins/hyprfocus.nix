@@ -3,12 +3,6 @@
   wayland.windowManager.hyprland = {
     plugins = [ pkgs.hyprlandPlugins.hyprfocus ];
     settings.plugin.hyprfocus = {
-      columns = 3;
-      gap_size = 5;
-      bg_col = "rgb(111111)";
-      workspace_method = "center current";
-      skip_empty = true;
-
       enabled = "yes";
       animate_floating = "yes";
       animate_workspacechange = "yes";
@@ -24,7 +18,7 @@
       ];
 
       flash = {
-        flash_opacity = 0.7;
+        flash_opacity = 0.3;
         in_bezier = "bezIn";
         in_speed = 0.5;
         out_bezier = "bezOut";

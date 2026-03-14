@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.dataspell ];
+  home.packages = [ pkgs-unstable.jetbrains.dataspell ];
 }

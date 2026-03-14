@@ -1,20 +1,15 @@
 {
-  pkgs,
   pkgs-unstable,
   ...
 }:
 {
-  home.packages = with pkgs-unstable; [
-    quickshell
-    dms-shell
-    dgop
+  home.packages = [
+    pkgs-unstable.dms-shell
+    pkgs-unstable.quickshell
+    pkgs-unstable.dgop
   ];
 
   wayland.windowManager.hyprland.settings.exec-once = [
     "dms run"
   ];
-  # programs.dms-shell = {
-  #   enable = true;
-  #   quickshell.package = pkgs.quickshell;
-  # };
 }

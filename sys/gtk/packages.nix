@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    papirus-icon-theme
-    adwaita-icon-theme
-    catppuccin-cursors.mochaMauve
-    bibata-cursors
-    librsvg
+  home.packages = [
+    pkgs-unstable.papirus-icon-theme
+    pkgs-unstable.adwaita-icon-theme
+    pkgs-unstable.catppuccin-cursors.mochaMauve
+    pkgs-unstable.bibata-cursors
+    pkgs.librsvg
   ];
 }

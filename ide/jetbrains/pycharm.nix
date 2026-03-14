@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.pycharm ];
+  home.packages = [ pkgs-unstable.jetbrains.pycharm ];
 }

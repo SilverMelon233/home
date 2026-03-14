@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.rust-rover ];
+  home.packages = [ pkgs-unstable.jetbrains.rust-rover ];
 }

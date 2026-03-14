@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    neovim
+  home.packages = [
+    pkgs-unstable.neovim
   ];
 }

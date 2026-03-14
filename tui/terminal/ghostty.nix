@@ -1,5 +1,4 @@
 {
-  pkgs,
   userConfig,
   ...
 }:
@@ -16,7 +15,6 @@ in
 {
   programs.ghostty = {
     enable = true;
-    package = pkgs.ghostty;
 
     enableBashIntegration = true;
     enableFishIntegration = true;

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains-toolbox ];
+  home.packages = [ pkgs-unstable.jetbrains-toolbox ];
 }

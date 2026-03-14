@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  home.packages = [ pkgs.jetbrains.goland ];
+  home.packages = [ pkgs-unstable.jetbrains.goland ];
 }
