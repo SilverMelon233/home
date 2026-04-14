@@ -10,11 +10,8 @@
     action_key: meta
 
     input:
-      keyboard:
-        xkb_layout: us
       touchpad:
-        tap: true
-        natural_scroll: true
+        tap_to_click: true
         disable_while_typing: true
 
     inner_gaps: 8
