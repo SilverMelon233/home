@@ -189,15 +189,5 @@ in
     theme=matugen
   '';
 
-  # ── Activation: run matugen once on first switch ─────────────────────────
-  home.activation.matugen = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    WALLPAPER="${wallpaper}"
-    if [ -f "$WALLPAPER" ]; then
-      echo "matugen: generating theme from $WALLPAPER"
-      ${pkgs.matugen}/bin/matugen image "$WALLPAPER" --source-color-index 0 || true
-    else
-      $DRY_RUN_CMD echo "matugen: wallpaper not found at $WALLPAPER, skipping"
-      $DRY_RUN_CMD echo "         Run: matugen image <wallpaper-path>"
-    fi
-  '';
+  # ── Activation: DMS manages theme generation, no matugen on switch ──────
 }
