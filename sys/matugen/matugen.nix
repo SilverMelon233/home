@@ -103,6 +103,17 @@ in
           input_path = "${themesDir}/quickshell.json";
           output_path = "~/.local/state/quickshell/generated/colors.json";
         };
+        # Neovim (base16-nvim lua theme)
+        neovim = {
+          input_path = "${themesDir}/neovim/template.lua";
+          output_path = "~/.config/nvim/matugen.lua";
+          post_hook = "pkill -SIGUSR1 nvim || true";
+        };
+        # Micro editor
+        micro = {
+          input_path = "${themesDir}/micro.micro";
+          output_path = "~/.config/micro/colorschemes/matugen.micro";
+        };
         # Generic CSS variables
         colors-css = {
           input_path = "${themesDir}/colors.css";

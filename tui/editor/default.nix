@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./neovim.nix ];
+  imports = [
+    ./neovim.nix
+    ./micro.nix
+  ];
 }
