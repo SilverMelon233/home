@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ./helix
+    ./vscodium
+    ./zed
+  ];
+}

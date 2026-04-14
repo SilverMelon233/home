@@ -1,0 +1,4 @@
+{ ... }:
+{
+  imports = [ ./obs-studio.nix ];
+}
