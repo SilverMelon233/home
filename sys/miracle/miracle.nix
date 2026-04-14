@@ -19,8 +19,6 @@
 
     inner_gaps: 8
     outer_gaps: 8
-    border:
-      size: 2
 
     terminal: ghostty
     resize_jump: 10
@@ -56,13 +54,13 @@
           - primary
         key: KEY_F
 
-      - name: request_horizontal
+      - name: request_horizontal_layout
         action: down
         modifiers:
           - primary
         key: KEY_H
 
-      - name: request_vertical
+      - name: request_vertical_layout
         action: down
         modifiers:
           - primary

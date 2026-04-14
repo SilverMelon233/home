@@ -1,4 +1,5 @@
 border:
+  size: 2
   focus_color: "{{colors.primary.default.hex}}"
   color: "{{colors.outline.default.hex}}"
   radius: 8
