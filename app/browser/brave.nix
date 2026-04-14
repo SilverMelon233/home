@@ -1,11 +1,10 @@
-{
-  pkgs-unstable,
+{ pkgs,
   ...
 }:
 {
   programs.brave = {
     enable = true;
-    package = pkgs-unstable.brave;
+    package = pkgs.brave;
     # No theme extensions — colors come from GTK/matugen
     extensions = [ ];
     commandLineArgs = [

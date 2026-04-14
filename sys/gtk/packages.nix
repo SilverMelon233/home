@@ -1,6 +1,6 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     papirus-icon-theme
     adwaita-icon-theme
     # Catppuccin cursor retained as requested

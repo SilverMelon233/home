@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, lib, ... }:
+{ pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
     kdePackages.qtstyleplugin-kvantum

@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
-  home.packages = [ pkgs-unstable.remmina ];
+  home.packages = [ pkgs.remmina ];
 }

@@ -1,14 +1,11 @@
-{
-  pkgs,
-  pkgs-unstable,
-  userConfig,
+{ pkgs,
   lib,
   ...
 }:
 {
   programs.vscode = {
     enable = true;
-    package = pkgs-unstable.vscodium;
+    package = pkgs.vscodium;
 
     # Extensions are installed manually via the OpenVSX marketplace.
     # VSCodium ships with OpenVSX as default registry — no extra config needed.
@@ -45,11 +42,13 @@
 
         # Workbench
         "workbench.startupEditor" = "none";
-        "workbench.colorTheme" = "Default Dark Modern";
+        # DMS 动态主题 — dms 自动安装扩展并更新 dankshell-*.json
+        # 扩展名：DankLinux.dms-theme，主题名：Dynamic Base16 DankShell
+        "workbench.colorTheme" = "Dynamic Base16 DankShell";
         "workbench.iconTheme" = "vscode-icons";
 
         # Locale
-        "locale" = userConfig.i18n.language;
+        "locale" = "zh-cn";
 
         # Telemetry
         "telemetry.telemetryLevel" = "off";

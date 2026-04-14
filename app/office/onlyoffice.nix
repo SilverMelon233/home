@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
-  home.packages = [ pkgs-unstable.onlyoffice-desktopeditors ];
+  home.packages = [ pkgs.onlyoffice-desktopeditors ];
 }

@@ -1,14 +1,11 @@
-{
-  pkgs,
-  pkgs-unstable,
-  userConfig,
+{ pkgs,
   lib,
   config,
   ...
 }:
 let
   themesDir = toString ./templates;
-  wallpaper = userConfig.matugen.wallpaperPath;
+  wallpaper = "$HOME/.local/share/dms/wallpaper";
 
   # Helper to emit a TOML template block (with optional post_hook)
   tplBlock = name: attrs:
@@ -80,6 +77,24 @@ in
       input_path  = "${themesDir}/niri-colors.kdl";
       output_path = "~/.config/niri/matugen-colors.kdl";
     }}
+    ${tplBlock "mango" {
+      input_path  = "${themesDir}/mango-colors.conf";
+      output_path = "~/.config/mango/matugen-colors.conf";
+      post_hook   = "mmsg -d reload_config || true";
+    }}
+    ${tplBlock "sway" {
+      input_path  = "${themesDir}/sway-colors.conf";
+      output_path = "~/.config/sway/matugen-colors.conf";
+      post_hook   = "swaymsg reload || true";
+    }}
+    ${tplBlock "labwc" {
+      input_path  = "${themesDir}/labwc-themerc";
+      output_path = "~/.config/labwc/themerc-override";
+    }}
+    ${tplBlock "miracle" {
+      input_path  = "${themesDir}/miracle-colors.yaml";
+      output_path = "~/.config/miracle-wm/matugen-colors.yaml";
+    }}
 
     # ── File manager ─────────────────────────────────────────────────────────
     ${tplBlock "yazi" {
@@ -139,6 +154,25 @@ in
       input_path  = "${themesDir}/colors.css";
       output_path = "~/.config/matugen/colors.css";
     }}
+
+    # ── System monitor ───────────────────────────────────────────────────────
+    ${tplBlock "btop" {
+      input_path  = "${themesDir}/btop.theme";
+      output_path = "~/.config/btop/themes/matugen.theme";
+    }}
+
+    # ── App launcher ─────────────────────────────────────────────────────────
+    ${tplBlock "fuzzel" {
+      input_path  = "${themesDir}/fuzzel.ini";
+      output_path = "~/.config/fuzzel/fuzzel-colors.ini";
+    }}
+
+    # ── Fuzzy finder ─────────────────────────────────────────────────────────
+    ${tplBlock "television" {
+      input_path  = "${themesDir}/television.toml";
+      output_path = "~/.config/television/themes/matugen.toml";
+    }}
+
   '';
 
   # ── Ensure gtk css import files exist ────────────────────────────────────
@@ -160,7 +194,7 @@ in
     WALLPAPER="${wallpaper}"
     if [ -f "$WALLPAPER" ]; then
       echo "matugen: generating theme from $WALLPAPER"
-      ${pkgs.matugen}/bin/matugen image "$WALLPAPER" || true
+      ${pkgs.matugen}/bin/matugen image "$WALLPAPER" --source-color-index 0 || true
     else
       $DRY_RUN_CMD echo "matugen: wallpaper not found at $WALLPAPER, skipping"
       $DRY_RUN_CMD echo "         Run: matugen image <wallpaper-path>"

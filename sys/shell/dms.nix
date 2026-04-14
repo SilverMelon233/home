@@ -1,10 +1,10 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   # dms-shell with dynamic theming enabled.
   # enableDynamicTheming = true automatically includes pkgs.matugen as a
   # dependency and hooks into wallpaper changes to re-run matugen.
   # Reference: nixos/modules/programs/wayland/dms-shell.nix
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     dms-shell
     quickshell
     dgop
