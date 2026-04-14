@@ -60,6 +60,8 @@
     bindsym $mod+Space exec $menu
 
     # ── Window management ─────────────────────────────────────────────────────
+    # Reload config
+    bindsym $mod+Shift+c reload
     # Hyprland: bind=$mod, Q, killactive
     bindsym $mod+q kill
     # Hyprland: bind=$mod, F, fullscreen, 1  (maximize)
@@ -103,6 +105,8 @@
     bindsym $mod+h splith
     # Hyprland: bind=$mod, V, makegroup v (split vertical)
     bindsym $mod+v splitv
+    # Toggle between horizontal and vertical split
+    bindsym $mod+e layout toggle split
 
     # ── Tab navigation ────────────────────────────────────────────────────────
     # Hyprland: bind=$mod, comma/period, changegroupactive, b/f
@@ -148,6 +152,11 @@
     # Three-finger swipe up/down: toggle fullscreen
     bindgesture swipe:3:up fullscreen toggle
     bindgesture swipe:3:down fullscreen toggle
+    # Four-finger swipe: resize (like Hyprland)
+    bindgesture swipe:4:left resize shrink width 20px
+    bindgesture swipe:4:right resize grow width 20px
+    bindgesture swipe:4:up resize shrink height 20px
+    bindgesture swipe:4:down resize grow height 20px
 
     # ── Lid switch ────────────────────────────────────────────────────────────
     bindswitch lid:on output eDP-1 disable
