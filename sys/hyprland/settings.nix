@@ -29,7 +29,7 @@
     bind=$mod, Return, exec, ghostty
     bind=$mod, Q, killactive
     bind=$mod, Space, exec, dms ipc call spotlight toggle
-    bind=$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit
+    bind=$mod, M, exec, zenity --question --text='Exit Hyprland?' --title='Confirm' && hyprshutdown
     bind=$mod, L, exec, dms ipc lock lock
     bind=$mod, F, fullscreen, 1
     bind=$mod SHIFT, F, fullscreen, 0

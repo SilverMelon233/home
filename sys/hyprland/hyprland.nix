@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     hyprshutdown
+    zenity
   ];
 
   wayland.windowManager.hyprland.extraConfig = lib.mkBefore ''
