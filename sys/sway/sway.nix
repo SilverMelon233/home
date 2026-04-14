@@ -16,6 +16,7 @@
       tap enabled
       natural_scroll enabled
       dwt enabled
+      events enabled
     }
 
     input type:keyboard {
@@ -25,75 +26,83 @@
     # ── Appearance ────────────────────────────────────────────────────────────
     gaps inner 8
     default_border pixel 2
+    focus_follows_mouse yes
+    mouse_warping container
+
+    # ── Disable swaybar (DMS provides the bar) ────────────────────────────────
+    bar {
+      mode invisible
+    }
 
     # ── Matugen colors ────────────────────────────────────────────────────────
     include ~/.config/sway/matugen-colors.conf
 
     # ── DMS-managed sources ───────────────────────────────────────────────────
-    include ~/.config/sway/dms/*
+    # NOTE: DMS does not currently generate sway files. Uncomment when available:
+    # include ~/.config/sway/dms/*
 
     # ── Startup ───────────────────────────────────────────────────────────────
     exec fcitx5
     exec dms run
 
     # ── Environment ───────────────────────────────────────────────────────────
-    set $env_qt QT_QPA_PLATFORMTHEME=qt6ct QT_STYLE_OVERRIDE=kvantum
+    exec_always systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_STYLE_OVERRIDE
 
     # ── Keybindings ──────────────────────────────────────────────────────────
-    # All bindings mirror Hyprland equivalents.
+    # All bindings mirror Hyprland equivalents. Sway uses lowercase key names.
 
     # ── Applications ──────────────────────────────────────────────────────────
     # Hyprland: bind=$mod, Return, exec, ghostty
     bindsym $mod+Return exec ghostty
     # Hyprland: bind=$mod, B, exec, brave
-    bindsym $mod+B exec brave
+    bindsym $mod+b exec brave
     # Hyprland: bind=$mod, Space, exec, dms ipc call spotlight toggle
     bindsym $mod+Space exec $menu
 
     # ── Window management ─────────────────────────────────────────────────────
     # Hyprland: bind=$mod, Q, killactive
-    bindsym $mod+Q kill
+    bindsym $mod+q kill
     # Hyprland: bind=$mod, F, fullscreen, 1  (maximize)
-    bindsym $mod+F fullscreen enable
+    bindsym $mod+f fullscreen enable
     # Hyprland: bind=$mod SHIFT, F, fullscreen  (true fullscreen)
-    bindsym $mod+Shift+F fullscreen toggle global
+    bindsym $mod+Shift+f fullscreen toggle global
     # Hyprland: bind=$mod, C, centerwindow
-    bindsym $mod+C move position center
+    bindsym $mod+c move position center
     # Hyprland: bind=$mod, M, exit
-    bindsym $mod+M exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
+    bindsym $mod+m exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
     # Hyprland: bind=$mod, L, exec, dms ipc lock lock
-    bindsym $mod+L exec dms ipc lock lock
+    bindsym $mod+l exec dms ipc lock lock
     # Hyprland: bind=$mod CTRL, S, exec, dms screenshot
-    bindsym $mod+Ctrl+S exec dms screenshot
+    bindsym $mod+Ctrl+s exec dms screenshot
 
     # ── Focus (ASWD) ──────────────────────────────────────────────────────────
     # Hyprland: bind=$mod, A/D/W/S, movefocus, l/r/u/d
-    bindsym $mod+A focus left
-    bindsym $mod+D focus right
-    bindsym $mod+W focus up
-    bindsym $mod+S focus down
+    bindsym $mod+a focus left
+    bindsym $mod+d focus right
+    bindsym $mod+w focus up
+    bindsym $mod+s focus down
 
     # ── Move windows (SHIFT+ASWD) ─────────────────────────────────────────────
     # Hyprland: bind=$mod SHIFT, A/D/W/S, movewindow, l/r/u/d
-    bindsym $mod+Shift+A move left
-    bindsym $mod+Shift+D move right
-    bindsym $mod+Shift+W move up
-    bindsym $mod+Shift+S move down
+    bindsym $mod+Shift+a move left
+    bindsym $mod+Shift+d move right
+    bindsym $mod+Shift+w move up
+    bindsym $mod+Shift+s move down
 
     # ── Resize (ALT+ASWD) ─────────────────────────────────────────────────────
     # Hyprland: bind=$mod ALT, A/D/W/S, resizeactive, ±10 0 / 0 ±10
-    bindsym $mod+Alt+A resize shrink width 10px
-    bindsym $mod+Alt+D resize grow width 10px
-    bindsym $mod+Alt+W resize shrink height 10px
-    bindsym $mod+Alt+S resize grow height 10px
+    bindsym $mod+Alt+a resize shrink width 10px
+    bindsym $mod+Alt+d resize grow width 10px
+    bindsym $mod+Alt+w resize shrink height 10px
+    bindsym $mod+Alt+s resize grow height 10px
 
     # ── Layout ────────────────────────────────────────────────────────────────
     # Hyprland: bind=$mod, T, togglegroup
-    bindsym $mod+T layout toggle tabbed splith
+    bindsym $mod+t layout toggle tabbed splith
     # Hyprland: bind=$mod, H, makegroup h (split horizontal)
-    bindsym $mod+H splith
+    bindsym $mod+h splith
     # Hyprland: bind=$mod, V, makegroup v (split vertical)
-    bindsym $mod+V splitv
+    bindsym $mod+v splitv
 
     # ── Tab navigation ────────────────────────────────────────────────────────
     # Hyprland: bind=$mod, comma/period, changegroupactive, b/f
@@ -132,14 +141,16 @@
     bindsym --whole-window button9 workspace next_on_output
     bindsym --whole-window button8 workspace prev_on_output
 
-    # ── Mode: resize ──────────────────────────────────────────────────────────
-    mode "resize" {
-      bindsym A resize shrink width 10px
-      bindsym D resize grow width 10px
-      bindsym W resize shrink height 10px
-      bindsym S resize grow height 10px
-      bindsym Return mode "default"
-      bindsym Escape mode "default"
-    }
+    # ── Touchpad gestures ─────────────────────────────────────────────────────
+    # Three-finger swipe left/right: switch workspace
+    bindgesture swipe:3:left workspace prev
+    bindgesture swipe:3:right workspace next
+    # Three-finger swipe up/down: toggle fullscreen
+    bindgesture swipe:3:up fullscreen toggle
+    bindgesture swipe:3:down fullscreen toggle
+
+    # ── Lid switch ────────────────────────────────────────────────────────────
+    bindswitch lid:on output eDP-1 disable
+    bindswitch lid:off output eDP-1 enable
   '';
 }
