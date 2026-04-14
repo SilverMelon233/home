@@ -208,7 +208,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    package = pkgs-unstable.neovim;
+    package = pkgs.neovim-unwrapped;
     defaultEditor = false;   # EDITOR is set to vscodium in home.nix
 
     withNodeJs  = true;
