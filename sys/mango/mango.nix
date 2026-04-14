@@ -5,7 +5,8 @@
   # Keybindings mirror Hyprland: SUPER modifier, ASWD focus/move
   home.packages = with pkgs; [
     mangowc
-    xdg-desktop-portal-wlr  # portal support for wlroots-based compositors
+    xdg-desktop-portal-wlr
+    zenity
   ];
 
   # ── Main mango config ────────────────────────────────────────────────────
@@ -66,8 +67,8 @@
     bind=SUPER,F,togglemaximizescreen
     # Hyprland: bind=$mod SHIFT, F, fullscreen  (true fullscreen)
     bind=SUPER+SHIFT,F,togglefullscreen
-    # Hyprland: bind=$mod, M, exec, hyprshutdown || hyprctl dispatch exit
-    bind=SUPER,M,quit
+     # Hyprland: bind=$mod, M, exit with confirm
+    bind=SUPER,M,spawn_shell,zenity --question --text='Exit mango?' --title='Confirm' && mmsg -c quit
     # Hyprland: bind=$mod, L, exec, dms ipc lock lock
     bind=SUPER,L,spawn_shell,dms ipc lock lock
     # Hyprland: bind=$mod CTRL, S, exec, dms screenshot

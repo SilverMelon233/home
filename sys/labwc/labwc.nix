@@ -34,7 +34,7 @@
         <keybind key="W-f"><action name="Maximize"/></keybind>
         <keybind key="W-S-f"><action name="Fullscreen"/></keybind>
         <keybind key="W-c"><action name="Center"/></keybind>
-        <keybind key="W-m"><action name="Exit"/></keybind>
+        <keybind key="W-m"><action name="Execute"><command>labnag -t warning -m 'Exit labwc?' -Z 'Yes' 'labwc -e'</command></action></keybind>
         <keybind key="W-l"><action name="Execute"><command>dms ipc lock lock</command></action></keybind>
         <keybind key="W-C-s"><action name="Execute"><command>dms screenshot</command></action></keybind>
 

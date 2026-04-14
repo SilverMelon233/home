@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     miracle-wm
     xdg-desktop-portal-wlr
+    zenity
   ];
 
   home.file.".config/miracle-wm/config.yaml".text = ''
@@ -60,53 +61,53 @@
         action: down
         modifiers:
           - primary
-        key: Q
+        key: q
 
       # Hyprland: bind=$mod, F, fullscreen, 1 (maximize)
       - name: fullscreen
         action: down
         modifiers:
           - primary
-        key: F
+        key: f
 
       # Hyprland: bind=$mod, H, makegroup h (split horizontal)
       - name: request_horizontal
         action: down
         modifiers:
           - primary
-        key: H
+        key: h
 
       # Hyprland: bind=$mod, V, makegroup v (split vertical)
       - name: request_vertical
         action: down
         modifiers:
           - primary
-        key: V
+        key: v
 
       # Hyprland: bind=$mod, A/D/W/S, movefocus, l/r/u/d
       - name: select_left
         action: down
         modifiers:
           - primary
-        key: A
+        key: a
 
       - name: select_right
         action: down
         modifiers:
           - primary
-        key: D
+        key: d
 
       - name: select_up
         action: down
         modifiers:
           - primary
-        key: W
+        key: w
 
       - name: select_down
         action: down
         modifiers:
           - primary
-        key: S
+        key: s
 
       # Hyprland: bind=$mod SHIFT, A/D/W/S, movewindow, l/r/u/d
       - name: move_left
@@ -277,7 +278,7 @@
         action: down
         modifiers:
           - primary
-        key: B
+        key: b
 
       # Hyprland: bind=$mod, Space, exec, dms ipc call spotlight toggle
       - command: dms ipc call spotlight toggle
@@ -299,21 +300,21 @@
         action: down
         modifiers:
           - primary
-        key: C
+        key: c
 
-      # Hyprland: bind=$mod, M, exit
-      - command: miraclemsg -c "quit"
+      # Hyprland: bind=$mod, M, exit with confirm
+      - command: zenity --question --text='Exit miracle?' --title='Confirm' && miraclemsg -c "quit"
         action: down
         modifiers:
           - primary
-        key: M
+        key: m
 
       # Hyprland: bind=$mod, L, exec, dms ipc lock lock
       - command: dms ipc lock lock
         action: down
         modifiers:
           - primary
-        key: L
+        key: l
 
       # Hyprland: bind=$mod CTRL, S, exec, dms screenshot
       - command: dms screenshot
@@ -321,7 +322,7 @@
         modifiers:
           - primary
           - ctrl
-        key: S
+        key: s
 
       # Hyprland: bind=$mod ALT, A/D, resizeactive, ±10 0
       - command: miraclemsg -c "resize left 10"
@@ -329,14 +330,14 @@
         modifiers:
           - primary
           - alt
-        key: A
+        key: a
 
       - command: miraclemsg -c "resize right 10"
         action: down
         modifiers:
           - primary
           - alt
-        key: D
+        key: d
 
       # Hyprland: bind=$mod ALT, W/S, resizeactive, 0 ±10
       - command: miraclemsg -c "resize up 10"
@@ -344,13 +345,13 @@
         modifiers:
           - primary
           - alt
-        key: W
+        key: w
 
       - command: miraclemsg -c "resize down 10"
         action: down
         modifiers:
           - primary
           - alt
-        key: S
+        key: s
   '';
 }

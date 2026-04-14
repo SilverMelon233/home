@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     niri
     xdg-desktop-portal-gnome  # portal support for niri
+    zenity
   ];
 
   # Main niri config — KDL format.
@@ -159,8 +160,8 @@
       // ── Screenshot & session ──────────────────────────────────────────────
       // Hyprland: bind=$mod CTRL, S, exec, dms screenshot
       Mod+Ctrl+S { spawn "dms" "screenshot"; }
-      // Hyprland: bind=$mod, M, exec, hyprshutdown || hyprctl dispatch exit
-      Mod+M { spawn "sh" "-c" "niri msg action quit"; }
+      // Hyprland: bind=$mod, M, exit with confirm
+      Mod+M { spawn "sh" "-c" "zenity --question --text='Exit niri?' --title='Confirm' && niri msg action quit"; }
       // Hyprland: bind=$mod, L, exec, dms ipc lock lock
       Mod+L { spawn "dms" "ipc" "lock" "lock"; }
     }
