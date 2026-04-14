@@ -17,6 +17,11 @@
         <gap>8</gap>
       </theme>
 
+      <desktops number="10" />
+
+      <!-- Default scale for eDP-1 -->
+      <output name="eDP-1" scale="1.75" />
+
       <keyboard>
         <default />
         <!-- ── Applications ─────────────────────────────────────────────── -->

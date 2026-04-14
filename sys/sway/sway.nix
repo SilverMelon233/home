@@ -29,6 +29,9 @@
     focus_follows_mouse yes
     mouse_warping container
 
+    # ── Output ────────────────────────────────────────────────────────────────
+    output eDP-1 scale 1.75
+
     # ── Disable swaybar (DMS provides the bar) ────────────────────────────────
     bar {
       mode invisible
