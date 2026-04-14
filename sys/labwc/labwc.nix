@@ -18,6 +18,7 @@
       </theme>
 
       <keyboard>
+        <default />
         <!-- ── Applications ─────────────────────────────────────────────── -->
         <keybind key="W-Return"><action name="Execute"><command>ghostty</command></action></keybind>
         <keybind key="W-b"><action name="Execute"><command>brave</command></action></keybind>
