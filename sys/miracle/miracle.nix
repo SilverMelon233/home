@@ -6,16 +6,25 @@
     zenity
   ];
 
+  home.file.".config/autostart/dms-run.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=DMS Shell
+    Exec=dms run
+    X-GNOME-Autostart-enabled=true
+    Hidden=false
+  '';
+
   home.file.".config/miracle-wm/config.yaml".text = ''
     action_key: meta
 
-    input:
-      touchpad:
-        tap_to_click: true
-        disable_while_typing: true
-
     inner_gaps: 8
     outer_gaps: 8
+    border:
+      size: 2
+      focus_color: d0bcfe
+      color: 948f99
+      radius: 8
 
     terminal: ghostty
     resize_jump: 10
@@ -27,10 +36,6 @@
 
     startup_apps:
       - command: fcitx5
-      - command: dms run
-
-    includes:
-      - ~/.config/miracle-wm/matugen-colors.yaml
 
     default_action_overrides:
       - name: terminal
@@ -201,7 +206,7 @@
           - primary
         key: KEY_C
 
-      - command: zenity --question --text='Exit miracle?' --title='Confirm' && miraclemsg -c "quit"
+      - command: miraclemsg exit
         action: down
         modifiers:
           - primary

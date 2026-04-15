@@ -91,10 +91,6 @@ in
       input_path  = "${themesDir}/labwc-themerc";
       output_path = "~/.config/labwc/themerc-override";
     }}
-    ${tplBlock "miracle" {
-      input_path  = "${themesDir}/miracle-colors.yaml";
-      output_path = "~/.config/miracle-wm/matugen-colors.yaml";
-    }}
 
     # ── File manager ─────────────────────────────────────────────────────────
     ${tplBlock "yazi" {
