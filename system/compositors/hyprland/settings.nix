@@ -3,7 +3,6 @@
   home.packages = [ pkgs.glib ];
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-  home.sessionVariables.GTK_IM_MODULE = "fcitx";
   home.sessionVariables.QT_IM_MODULE = "fcitx";
   home.sessionVariables.XMODIFIERS = "@im=fcitx";
 
