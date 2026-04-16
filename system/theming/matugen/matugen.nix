@@ -134,8 +134,8 @@ in
 
     # ── Input method ──────────────────────────────────────────────────────────
     ${tplBlock "fcitx5" {
-      input_path  = "${themesDir}/fcitx5-skin.conf";
-      output_path = "~/.local/share/fcitx5/skin/matugen/skin.conf";
+      input_path  = "${themesDir}/fcitx5-theme.conf";
+      output_path = "~/.local/share/fcitx5/skin/matugen/theme.conf";
     }}
 
     # ── File manager ─────────────────────────────────────────────────────────

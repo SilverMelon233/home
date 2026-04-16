@@ -4,6 +4,7 @@
 
   # Main config imports matugen-generated theme
   home.file.".config/alacritty/alacritty.toml".text = ''
+    [general]
     import = ["~/.config/alacritty/themes/matugen.toml"]
     
     [font]
