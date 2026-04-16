@@ -4,5 +4,6 @@
     ./helix
     ./neovim
     ./micro
+    ./emacs
   ];
 }

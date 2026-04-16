@@ -46,8 +46,8 @@ in
       output_path = "~/.config/foot/theme.ini";
     }}
     ${tplBlock "wezterm" {
-      input_path  = "${themesDir}/wezterm.toml";
-      output_path = "~/.config/wezterm/colors/matugen.toml";
+      input_path  = "${themesDir}/wezterm.lua";
+      output_path = "~/.config/wezterm/colors/matugen.lua";
     }}
     ${tplBlock "alacritty" {
       input_path  = "${themesDir}/alacritty.toml";
