@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ./helix
+    ./neovim
+    ./micro
+  ];
+}

@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ./compositors
+    ./desktop
+    ./theming
+  ];
+}

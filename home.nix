@@ -13,11 +13,8 @@
   };
 
   imports = [
-    ./app
-    ./cli
-    ./tui
-    ./ide
-    ./sys
+    ./apps
+    ./system
   ];
 
   home.stateVersion = "25.05";

@@ -1,8 +1,0 @@
-{ ... }:
-{
-  imports = [
-    ./shell
-    ./terminal
-    ./editor
-  ];
-}
