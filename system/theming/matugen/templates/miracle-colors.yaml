@@ -1,5 +1,0 @@
-border:
-  size: 2
-  focus_color: "{{colors.primary.default.hex_stripped}}"
-  color: "{{colors.outline.default.hex_stripped}}"
-  radius: 8

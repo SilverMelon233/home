@@ -41,31 +41,11 @@ in
       input_path  = "${themesDir}/zellij-theme.kdl.tera";
       output_path = "~/.config/zellij/themes/matugen.kdl";
     }}
-    ${tplBlock "foot" {
-      input_path  = "${themesDir}/foot.ini";
-      output_path = "~/.config/foot/theme.ini";
-    }}
-    ${tplBlock "wezterm" {
-      input_path  = "${themesDir}/wezterm.lua";
-      output_path = "~/.config/wezterm/colors/matugen.lua";
-    }}
-    ${tplBlock "alacritty" {
-      input_path  = "${themesDir}/alacritty.toml";
-      output_path = "~/.config/alacritty/themes/matugen.toml";
-    }}
 
     # ── Browsers ─────────────────────────────────────────────────────────────
-    ${tplBlock "firefox" {
-      input_path  = "${themesDir}/firefox-userchrome.css";
-      output_path = "~/.config/matugen/templates-output/firefox-userchrome.css";
-    }}
-    ${tplBlock "zen-browser" {
-      input_path  = "${themesDir}/zen-userchrome.css";
-      output_path = "~/.config/matugen/templates-output/zen-userchrome.css";
-    }}
     ${tplBlock "vivaldi" {
       input_path  = "${themesDir}/vivaldi.css";
-      output_path = "~/.config/matugen/templates-output/vivaldi.css";
+      output_path = "~/.config/vivaldi/custom.css";
     }}
 
     # ── Recording ────────────────────────────────────────────────────────────
@@ -107,29 +87,10 @@ in
       output_path = "~/.config/starship.toml";
     }}
 
-    # ── Window managers ──────────────────────────────────────────────────────
-    ${tplBlock "hyprland" {
-      input_path  = "${themesDir}/hyprland-colors.conf";
-      output_path = "~/.config/hypr/matugen-colors.conf";
-      post_hook   = "hyprctl reload || true";
-    }}
+    # ── Window manager ───────────────────────────────────────────────────────
     ${tplBlock "niri" {
       input_path  = "${themesDir}/niri-colors.kdl";
       output_path = "~/.config/niri/matugen-colors.kdl";
-    }}
-    ${tplBlock "mango" {
-      input_path  = "${themesDir}/mango-colors.conf";
-      output_path = "~/.config/mango/matugen-colors.conf";
-      post_hook   = "mmsg -d reload_config || true";
-    }}
-    ${tplBlock "sway" {
-      input_path  = "${themesDir}/sway-colors.conf";
-      output_path = "~/.config/sway/matugen-colors.conf";
-      post_hook   = "swaymsg reload || true";
-    }}
-    ${tplBlock "labwc" {
-      input_path  = "${themesDir}/labwc-themerc";
-      output_path = "~/.config/labwc/themerc-override";
     }}
 
     # ── Input method ──────────────────────────────────────────────────────────
@@ -142,13 +103,6 @@ in
     ${tplBlock "yazi" {
       input_path  = "${themesDir}/yazi-theme.toml";
       output_path = "~/.config/yazi/theme.toml";
-    }}
-
-    # ── Notification ─────────────────────────────────────────────────────────
-    ${tplBlock "dunst" {
-      input_path  = "${themesDir}/dunstrc-colors";
-      output_path = "~/.config/dunst/dunstrc";
-      post_hook   = "dunstctl reload || true";
     }}
 
     # ── GTK ──────────────────────────────────────────────────────────────────
@@ -201,12 +155,6 @@ in
     ${tplBlock "btop" {
       input_path  = "${themesDir}/btop.theme";
       output_path = "~/.config/btop/themes/matugen.theme";
-    }}
-
-    # ── App launcher ─────────────────────────────────────────────────────────
-    ${tplBlock "fuzzel" {
-      input_path  = "${themesDir}/fuzzel.ini";
-      output_path = "~/.config/fuzzel/fuzzel-colors.ini";
     }}
 
     # ── Fuzzy finder ─────────────────────────────────────────────────────────

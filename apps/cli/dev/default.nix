@@ -2,8 +2,8 @@
 {
   imports = [
     ./nix
-    ./nodejs
-    ./python
-    ./cc
+    ./js
+    ./py
+    ./cpp
   ];
 }

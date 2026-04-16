@@ -1,11 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   # niri compositor — home-manager 25.11 does not have wayland.windowManager.niri,
   # so we manage the package and config file directly.
   home.packages = with pkgs; [
     niri
-    xdg-desktop-portal-gnome  # portal support for niri
-    zenity
+    xdg-desktop-portal-gnome
   ];
 
   # Main niri config — KDL format.
@@ -161,7 +160,7 @@
       // Hyprland: bind=$mod CTRL, S, exec, dms screenshot
       Mod+Ctrl+S { spawn "dms" "screenshot"; }
       // Hyprland: bind=$mod, M, exit with confirm
-      Mod+M { spawn "sh" "-c" "zenity --question --text='Exit niri?' --title='Confirm' && niri msg action quit"; }
+      Mod+M { quit; }
       // Hyprland: bind=$mod, L, exec, dms ipc lock lock
       Mod+L { spawn "dms" "ipc" "lock" "lock"; }
     }

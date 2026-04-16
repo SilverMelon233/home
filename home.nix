@@ -10,6 +10,9 @@
     EDITOR = "codium";
     QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_STYLE_OVERRIDE = "kvantum";
+    NIXOS_OZONE_WL = "1";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 
   imports = [
