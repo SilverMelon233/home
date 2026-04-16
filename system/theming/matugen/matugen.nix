@@ -132,6 +132,12 @@ in
       output_path = "~/.config/labwc/themerc-override";
     }}
 
+    # ── Input method ──────────────────────────────────────────────────────────
+    ${tplBlock "fcitx5" {
+      input_path  = "${themesDir}/fcitx5-skin.conf";
+      output_path = "~/.local/share/fcitx5/skin/matugen/skin.conf";
+    }}
+
     # ── File manager ─────────────────────────────────────────────────────────
     ${tplBlock "yazi" {
       input_path  = "${themesDir}/yazi-theme.toml";
