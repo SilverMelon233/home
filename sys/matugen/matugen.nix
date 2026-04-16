@@ -41,8 +41,28 @@ in
       input_path  = "${themesDir}/zellij-theme.kdl.tera";
       output_path = "~/.config/zellij/themes/matugen.kdl";
     }}
+    ${tplBlock "foot" {
+      input_path  = "${themesDir}/foot.ini";
+      output_path = "~/.config/foot/theme.ini";
+    }}
+    ${tplBlock "wezterm" {
+      input_path  = "${themesDir}/wezterm.toml";
+      output_path = "~/.config/wezterm/colors/matugen.toml";
+    }}
+    ${tplBlock "alacritty" {
+      input_path  = "${themesDir}/alacritty.toml";
+      output_path = "~/.config/alacritty/themes/matugen.toml";
+    }}
 
     # ── Editors / IDEs ───────────────────────────────────────────────────────
+    ${tplBlock "vscode-pkg" {
+      input_path  = "${themesDir}/vscode-package.json";
+      output_path = "~/.vscode-oss/extensions/dms.matugen-theme-1.0.0/package.json";
+    }}
+    ${tplBlock "vscode-theme" {
+      input_path  = "${themesDir}/vscode-color-theme.json";
+      output_path = "~/.vscode-oss/extensions/dms.matugen-theme-1.0.0/themes/matugen-color-theme.json";
+    }}
     ${tplBlock "helix" {
       input_path  = "${themesDir}/helix.toml";
       output_path = "~/.config/helix/themes/matugen.toml";
