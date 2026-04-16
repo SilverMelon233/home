@@ -29,53 +29,51 @@
     ];
   };
 
-  # LazyVim starter configuration
-  # Clone from https://github.com/LazyVim/starter
-  home.file.".config/nvim/.gitignore".text = ''
-    tags
-    tests/
-    .cache/
-    *.locale
-    tt.*
-    .tests/
-   .luarc.json
-  '';
-
-  # Install script for LazyVim
-  home.file.".local/bin/lazyvim-install".text = ''
+  # LazyVim installation helper script (optional, run manually)
+  # User manages all LazyVim configs themselves
+  home.file.".local/bin/lazyvim-setup".text = ''
     #!/bin/sh
-    # Backup existing config
+    set -e
+    
+    echo "=== LazyVim Setup Helper ==="
+    echo ""
+    
+    # Check if already installed
+    if [ -d ~/.config/nvim ] && [ -f ~/.config/nvim/lazy-lock.json ]; then
+      echo "LazyVim appears to be already installed."
+      echo "Run 'nvim' to use it."
+      exit 0
+    fi
+    
+    # Backup existing config if exists
     if [ -d ~/.config/nvim ]; then
+      echo "Backing up existing nvim config to ~/.config/nvim.bak"
       mv ~/.config/nvim ~/.config/nvim.bak
     fi
+    
     # Clone LazyVim starter
-    git clone https://github.com/LazyVim/starter ~/.config/nvim
-    # Remove .git to allow user modifications
+    echo "Cloning LazyVim starter..."
+    git clone https://github.com/LazyVim/starter ~/.config/nvim --depth 1
     rm -rf ~/.config/nvim/.git
-    # Start nvim to install plugins
-    nvim --headless "+Lazy! sync" +qa
-  '';
-
-  # LazyVim uses matugen theme via base16 plugin
-  # Add matugen.lua for dynamic theme loading
-  home.file.".config/nvim/lua/plugins/theme.lua".text = ''
-    return {
-      {
-        "RRethy/base16-nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-          -- Load matugen-generated theme
-          local theme_path = vim.fn.expand("~/.config/nvim/matugen.lua")
-          local f = io.open(theme_path, "r")
-          if f then
-            io.close(f)
-            dofile(theme_path)
-          else
-            vim.cmd("colorscheme default")
-          end
-        end,
-      },
-    }
+    
+    echo ""
+    echo "LazyVim starter installed!"
+    echo ""
+    echo "To add matugen theme support, create ~/.config/nvim/lua/plugins/theme.lua:"
+    echo ""
+    echo '  return {'
+    echo '    {'
+    echo '      "RRethy/base16-nvim",'
+    echo '      lazy = false,'
+    echo '      priority = 1000,'
+    echo '      config = function()'
+    echo '        local f = io.open(vim.fn.expand("~/.config/nvim/matugen.lua"), "r")'
+    echo '        if f then io.close(f); dofile(vim.fn.expand("~/.config/nvim/matugen.lua")) end'
+    echo '      end,'
+    echo '    },'
+    echo '  }'
+    echo ""
+    echo "Then run: nvim"
+    echo "Plugins will auto-install on first launch."
   '';
 }
