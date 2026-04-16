@@ -54,6 +54,26 @@ in
       output_path = "~/.config/alacritty/themes/matugen.toml";
     }}
 
+    # ── Browsers ─────────────────────────────────────────────────────────────
+    ${tplBlock "firefox" {
+      input_path  = "${themesDir}/firefox-userchrome.css";
+      output_path = "~/.config/matugen/templates-output/firefox-userchrome.css";
+    }}
+    ${tplBlock "zen-browser" {
+      input_path  = "${themesDir}/zen-userchrome.css";
+      output_path = "~/.config/matugen/templates-output/zen-userchrome.css";
+    }}
+    ${tplBlock "vivaldi" {
+      input_path  = "${themesDir}/vivaldi.css";
+      output_path = "~/.config/matugen/templates-output/vivaldi.css";
+    }}
+
+    # ── Recording ────────────────────────────────────────────────────────────
+    ${tplBlock "obs" {
+      input_path  = "${themesDir}/obs-theme.obt";
+      output_path = "~/.config/obs-studio/themes/Matugen.obt";
+    }}
+
     # ── Editors / IDEs ───────────────────────────────────────────────────────
     ${tplBlock "vscode-pkg" {
       input_path  = "${themesDir}/vscode-package.json";
