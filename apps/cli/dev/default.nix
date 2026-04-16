@@ -4,5 +4,6 @@
     ./nix
     ./nodejs
     ./python
+    ./cc
   ];
 }

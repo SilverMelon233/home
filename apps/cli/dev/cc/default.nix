@@ -1,0 +1,4 @@
+{ ... }:
+{
+  imports = [ ./cc-tools.nix ];
+}
